@@ -22,7 +22,15 @@ public abstract class Tweet {
     }
 
     public Date getDate() {
+<<<<<<< HEAD
         return this.date;
+=======
+        return date;
+    }
+
+    public String getMessage() {
+        return message;
+>>>>>>> 61260690b68c23f8b99220ec935786d0d313ae03
     }
 
     public String getMessage() {

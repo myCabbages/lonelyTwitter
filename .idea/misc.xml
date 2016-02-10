@@ -3,6 +3,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+<<<<<<< HEAD
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -10,6 +11,8 @@
       </MavenGeneralSettings>
     </option>
   </component>
+=======
+>>>>>>> 61260690b68c23f8b99220ec935786d0d313ae03
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
@@ -50,6 +53,7 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
+<<<<<<< HEAD
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">
@@ -66,4 +70,6 @@
       </state>
     </states>
   </component>
+=======
+>>>>>>> 61260690b68c23f8b99220ec935786d0d313ae03
 </project>

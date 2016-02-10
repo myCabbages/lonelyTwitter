@@ -1,3 +1,14 @@
+/**
+ *LonelyTwitterActivity
+ *
+ *Feburary 2th 2016
+ *
+ * @author CMPUT301
+ * @version x.x.xx
+ * @since JDK1.7.0_91
+ * Copyright CMPUT301 UAlberta
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -31,6 +42,10 @@ public class LonelyTwitterActivity extends Activity {
 	private EditText bodyText;
 	private ListView oldTweetsList;
 
+	/**
+	 * @param ArrayList<Tweet>tweets</Tweet>
+	 */
+
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
 	public ArrayAdapter<Tweet> getAdapter() {
@@ -46,6 +61,9 @@ public class LonelyTwitterActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		/**
+		 * @param Bundle savedInstanceState
+		 */
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
@@ -97,6 +115,10 @@ public class LonelyTwitterActivity extends Activity {
 			Type listType = new TypeToken<ArrayList<NormalTweet>>() {}.getType();
 			tweets = gson.fromJson(in, listType);
 
+			/**
+			 * @throws FileNotFoundException
+			 * @throws IOException
+			 */
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			tweets = new ArrayList<Tweet>();
@@ -115,6 +137,11 @@ public class LonelyTwitterActivity extends Activity {
 			gson.toJson(tweets, out);
 			out.flush();
 			fos.close();
+
+			/**
+			 * @throws FileNotFoundException
+			 * @throws IOException
+ 			 */
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException();
