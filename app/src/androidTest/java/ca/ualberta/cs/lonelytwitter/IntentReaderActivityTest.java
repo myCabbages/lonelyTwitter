@@ -73,6 +73,17 @@ public class IntentReaderActivityTest extends ActivityInstrumentationTestCase2{
         assertEquals("This text should print out default text instead", "default text",
                 Ira.getText());
     }
+
+    public void testOnScreen(){
+        Intent intent = new Intent();
+        intent.putExtra(IntentReaderActivity.TEXT_TO_TRANSFORM_KEY, "message 5");
+
+        setActivityIntent(intent);
+        IntentReaderActivity Ira = (IntentReaderActivity) getActivity();
+        TextView textView = (TextView) Ira.findViewById(R.id.intentText);
+        ViewAsserts.assertOnScreen(Ira.getWindow().getDecorView(), textView);
+
+    }
     //
     //
 
