@@ -14,16 +14,12 @@ public class TweetList {
 
     public void add(Tweet tweet){
         tweets.add(tweet);
-<<<<<<< HEAD
+//<<<<<<< HEAD
     }
 
-    public boolean hasTweet(Tweet tweet){
-=======
-
-    }
 
     public boolean hasTweet(Tweet tweet) {
->>>>>>> 61260690b68c23f8b99220ec935786d0d313ae03
+//>>>>>>> 61260690b68c23f8b99220ec935786d0d313ae03
         return tweets.contains(tweet);
     }
 
