@@ -62,7 +62,15 @@ public class LonelyTwitterActivity extends Activity {
                 setResult(RESULT_OK);
             }
         });
+
+        Button searchButton = (Button) findViewById(R.id.search);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
     }
+
 
     @Override
     protected void onStart() {
