@@ -68,12 +68,13 @@ public class LonelyTwitterActivity extends Activity {
 
                 latestTweet.addThumbnail(thumbnail);
 
-                adapter.notifyDataSetChanged();
-
                 // Add the tweet to Elasticsearch
                 ElasticsearchTweetController.AddTweetTask addTweetTask = new ElasticsearchTweetController.AddTweetTask();
                 addTweetTask.execute(latestTweet);
+                ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
+                getTweetsTask.execute("");
 
+                adapter.notifyDataSetChanged();
                 bodyText.setText("");
                 pictureButton.setImageResource(android.R.color.transparent);
                 thumbnail = null;
