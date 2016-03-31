@@ -98,7 +98,9 @@ public class LonelyTwitterActivity extends Activity {
         getTweetsTask.execute("");
         try {
             tweets = new ArrayList<Tweet>();
-            tweets.addAll(getTweetsTask.get());
+            ArrayList<NormalTweet> collection = getTweetsTask.get();
+            //1. extract the variable, get tweet and put them in collection
+            tweets.addAll(collection);
             myTweets = new TweetList(tweets);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -108,17 +110,23 @@ public class LonelyTwitterActivity extends Activity {
 
         //Count important tweets
         numImportant = 0;
-        for ( Tweet aTweet: myTweets.getTweets() ){
-            if (aTweet.isImportant() == Boolean.TRUE){
-                numImportant++;
-            }
-        }
+
+        countImpTweets();
 
 //        adapter = new ArrayAdapter<Tweet>(this, R.layout.list_item, tweets);
         // Binds tweet list with view, so when our array updates, the view updates with it
         //adapter = new TweetAdapter(this, tweets); /* NEW! */
         adapter = new TweetAdapter(this, myTweets.getTweets());
         oldTweetsList.setAdapter(adapter);
+    }
+
+    //2. extract method, get a count important Tweets method.
+    private void countImpTweets() {
+        for ( Tweet aTweet: myTweets.getTweets() ){
+            if (aTweet.isImportant() == Boolean.TRUE){
+                numImportant++;
+            }
+        }
     }
 
     // http://developer.android.com/training/camera/photobasics.html
